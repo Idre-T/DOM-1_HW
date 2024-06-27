@@ -1,0 +1,68 @@
+<head>
+  <title>HW-DOM-JS</title>
+  <style>
+      .highlight { background-color: yellow; }
+      .underline { text-decoration: underline; }
+      .bold {font-weight: bold;}
+      .hidden {
+            display: none;
+        }
+      #button1{
+        background-color: aquamarine;
+        border-color: red;
+      }
+      .nonClickable {
+          pointer-events: none;
+        }
+
+
+  </style>
+</head>
+<body>
+  <h1>Ex.1</h1>
+  <p id="text" class="">This is a sample paragraph.</p>
+  <input type="text" id="classInput" placeholder="Enter class name">
+  <button onClick="addClass()">Add Class</button>
+
+  <br>
+
+  <h1>Ex.2</h1>
+  <p id="parag1">This is the first paragraph.</p>
+  <p id="parag2">This is the second paragraph.</p>
+  <p id="parag3">This is the third paragraph.</p>
+  <button onClick="toggleFirst()">Toggle First Paragraph</button>
+  <button onClick="toggleSecond()">Toggle Second Paragraph</button>
+  <button onClick="toggleThird()">Toggle Third Paragraph</button>
+
+  <br>
+
+  <h1>Ex.3</h1>
+  <button id="button1" onClick="clickMe()">Click me</button>
+
+
+
+    <script>
+        function addClass() {
+          const parag = document.getElementById('text');
+          const classoftext = document.getElementById('classInput').value;
+          parag.className = classoftext;
+        }
+        function toggleFirst() {
+          const parag1 = document.getElementById('parag1');
+          parag1.classList.toggle('hidden');
+        }
+        function toggleSecond() {
+          const parag2 = document.getElementById('parag2');
+          parag2.classList.toggle('hidden');
+        }
+        function toggleThird() {
+          const parag3 = document.getElementById('parag3');
+          parag3.classList.toggle('hidden');
+        }
+        function clickMe(){
+          const button = document.getElementById('button1');
+          button.textContent = 'Clicked!';
+          button.className = 'nonClickable';
+        }
+    </script>
+</body>
